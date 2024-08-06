@@ -2055,20 +2055,20 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
 	<body>
 		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 🫠</h1>
 		<div class="form-container">
-            <h2>FRAGMENT SETTINGS ⚙️</h2>
+            <h2>FRAGMENT SETTINGS <span class="material-symbols-outlined">manufacturing</span> </h2>
 			<form id="configForm">
 				<div class="form-control">
-					<label for="remoteDNS">🌏 Remote DNS</label>
+					<label for="remoteDNS"><span class="material-symbols-outlined">dns</span> Remote DNS</label>
 					<input type="url" id="remoteDNS" name="remoteDNS" value="${remoteDNS}" required>
 				</div>
 				<div class="form-control">
-					<label for="localDNS">🏚️ Local DNS</label>
+					<label for="localDNS"><span class="material-symbols-outlined">roofing</span> Local DNS</label>
 					<input type="text" id="localDNS" name="localDNS" value="${localDNS}"
 						pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|localhost$"
 						title="Please enter a valid DNS IP Address or localhost!"  required>
 				</div>	
 				<div class="form-control">
-					<label for="fragmentLengthMin">📐 Length</label>
+					<label for="fragmentLengthMin"><span class="material-symbols-outlined">square_foot</span> Length</label>
 					<div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;">
 						<input type="number" id="fragmentLengthMin" name="fragmentLengthMin" value="${lengthMin}" min="10" required>
 						<span style="text-align: center; white-space: pre;"> - </span>
@@ -2076,7 +2076,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
 					</div>
 				</div>
 				<div class="form-control">
-					<label for="fragmentIntervalMin">🕞 Interval</label>
+					<label for="fragmentIntervalMin"><span class="material-symbols-outlined">alarm</span> Interval</label>
 					<div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;">
 						<input type="number" id="fragmentIntervalMin" name="fragmentIntervalMin"
     						value="${intervalMin}" max="30" required>
@@ -2086,10 +2086,10 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
 					</div>
 				</div>
 				<div class="form-control">
-					<label for="outProxy">✈️ Chain Proxy</label>
+					<label for="outProxy"><span class="material-symbols-outlined">connecting_airports</span> Chain Proxy</label>
 					<input type="text" id="outProxy" name="outProxy" value="${outProxy}">
 				</div>
-                <h2>FRAGMENT ROUTING ⚙️</h2>
+                <h2>FRAGMENT ROUTING <span class="material-symbols-outlined">manufacturing</span></h2>
 				<div class="form-control" style="margin-bottom: 20px;">			
                     <div class="routing">
                         <input type="checkbox" id="block-ads" name="block-ads" style="margin: 0; grid-column: 2;" value="true" ${blockAds ? 'checked' : ''}>
@@ -2108,18 +2108,18 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
                         <label for="bypass-lan">Bypass LAN</label>
 					</div>
 				</div>
-                <h2>PROXY IP ⚙️</h2>
+                <h2>PROXY IP <span class="material-symbols-outlined">manufacturing</span></h2>
 				<div class="form-control">
-					<label for="proxyIP">📍 IP or Domain</label>
+					<label for="proxyIP"><span class="material-symbols-outlined">bring_your_own_ip</span> IP or Domain</label>
 					<input type="text" id="proxyIP" name="proxyIP" value="${proxyIP}">
 				</div>
-                <h2>CLEAN IP ⚙️</h2>
+                <h2>CLEAN IP <span class="material-symbols-outlined">manufacturing</span></h2>
 				<div class="form-control">
-					<label for="cleanIPs">✨ Clean IPs</label>
+					<label for="cleanIPs"><span class="material-symbols-outlined">rocket</span> Clean IPs</label>
 					<input type="text" id="cleanIPs" name="cleanIPs" value="${cleanIPs.replaceAll(",", " , ")}">
 				</div>
                 <div class="form-control">
-                    <label>🔎 Online Scanner</label>
+                    <label><span class="material-symbols-outlined">search_insights</span> Online Scanner</label>
                     <a href="https://scanner.github1.cloud/" id="scanner" name="scanner" target="_blank">
                         <button type="button" class="button">
                             Scan now
@@ -2127,7 +2127,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
                         </button>
                     </a>
                 </div>
-                <h2>PORTS ⚙️</h2>
+                <h2>PORTS <span class="material-symbols-outlined">manufacturing</span></h2>
                 <div class="table-container">
                     <table id="frag-sub-table">
                         <tr>
@@ -2144,23 +2144,23 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
                         </tr>`}        
                     </table>
                 </div>
-                <h2>WARP SETTINGS ⚙️</h2>
+                <h2>WARP SETTINGS <span class="material-symbols-outlined">manufacturing</span></h2>
 				<div class="form-control">
-                    <label for="wowEndpoint">✨ WoW Endpoints</label>
+                    <label for="wowEndpoint"><span class="material-symbols-outlined">airline_stops</span> WoW Endpoints</label>
                     <input type="text" id="wowEndpoint" name="wowEndpoint" value="${wowEndpoint.replaceAll(",", " , ")}" required>
 				</div>
 				<div class="form-control">
-                    <label for="warpEndpoints">✨ Warp Endpoints</label>
+                    <label for="warpEndpoints"><span class="material-symbols-outlined">straight</span> Warp Endpoints</label>
                     <input type="text" id="warpEndpoints" name="warpEndpoints" value="${warpEndpoints.replaceAll(",", " , ")}" required>
 				</div>
                 <div class="form-control">
-                    <label>🔄 Warp Configs</label>
+                    <label><span class="material-symbols-outlined">integration_instructions</span> Warp Configs</label>
                     <button id="refreshBtn" type="button" class="button" style="padding: 10px 0;" onclick="getWarpConfigs()">
                         Refresh<span class="material-symbols-outlined">autorenew</span>
                     </button>
                 </div>
                 <div class="form-control">
-                    <label>🔎 Endpoint Scanner</label>
+                    <label><span class="material-symbols-outlined">roundabout_right</span> Endpoint Scanner</label>
                     <button type="button" class="button" style="padding: 10px 0;" onclick="copyToClipboard('bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/warp/main/endip/install.sh)', false)">
                         Copy Script<span class="material-symbols-outlined">terminal</span>
                     </button>
@@ -2172,7 +2172,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
 				</div>
 			</form>
             <hr>            
-			<h2>NORMAL CONFIGS 🔗</h2>
+			<h2>NORMAL CONFIGS <span class="material-symbols-outlined">code</span></h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
@@ -2254,7 +2254,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
                     </tr>
 				</table>
 			</div>
-			<h2>FRAGMENT SUB ⛓️</h2>
+			<h2>FRAGMENT SUB <span class="material-symbols-outlined">link</span></h2>
 			<div class="table-container">
                 <table id="frag-sub-table">
                     <tr>
@@ -2291,7 +2291,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
                     </tr>
                 </table>
             </div>
-            <h2>WARP SUB 🔗</h2>
+            <h2>WARP SUB <span class="material-symbols-outlined">link</span></h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
@@ -2348,7 +2348,7 @@ const renderHomePage = async (env, hostName, fragConfigs) => {
 					</tr>
 				</table>
 			</div>
-            <h2>FRAGMENT - NEKORAY ⛓️</h2>
+            <h2>FRAGMENT - NEKORAY <span class="material-symbols-outlined">code</span></h2>
             <div class="table-container">
 				<table id="custom-configs-table">
 					<tr style="text-wrap: nowrap;">
